@@ -1,4 +1,4 @@
-# task_3_8
+# task_3_7
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://git.foxminded.ua/foxstudent105592/task_3_8.git
+git remote add origin https://git.foxminded.ua/foxstudent105592/task_3_7.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://git.foxminded.ua/foxstudent105592/task_3_8/-/settings/integrations)
+- [ ] [Set up project integrations](https://git.foxminded.ua/foxstudent105592/task_3_7/-/settings/integrations)
 
 ## Collaborate with your team
 
