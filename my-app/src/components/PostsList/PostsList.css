@@ -1,0 +1,17 @@
+h2 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list__body {
+    width: 100vw;
+}
+.list__container {
+    flex-wrap: wrap;
+}
+
+.list__item {
+    width: 90%;
+}
