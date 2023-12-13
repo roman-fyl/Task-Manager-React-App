@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 
-const ToDoTabPosts = ({ userId }) => {
-    const [posts, setPosts] = useState([]);
+const ToDoTabAlbum = ({ userId }) => {
+    const [album, setAlbum] = useState([]);
 
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`);
+          const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/albums`);
           const data = await response.json();
           console.log(data);
-          setPosts(data);
+          setAlbum(data);
         } catch (error) {
           console.error('Error fetching posts:', error);
         }
@@ -19,18 +19,17 @@ const ToDoTabPosts = ({ userId }) => {
       fetchData();
     }, [userId]);
   
-    if (!posts.length) {
-      return <p>No posts available.</p>;
+    if (!album.length) {
+      return <p>No albums available.</p>;
     }
   
     return (
       <div className='list__body'>
         <h2>Posts</h2>
         <ul className='list__container'>
-          {posts.map((post) => (
-            <li key={post.id} className='list__item'>
-              <strong>Title:</strong> {post.title}<br />
-              <strong>Body:</strong> {post.body}
+          {album.map((album_element) => (
+            <li key={album_element.id}>
+              <strong>Title:</strong> {album_element.title}<br />
             </li>
           ))}
         </ul>
@@ -38,4 +37,4 @@ const ToDoTabPosts = ({ userId }) => {
     );
   };
 
-export default ToDoTabPosts;
+export default ToDoTabAlbum;
