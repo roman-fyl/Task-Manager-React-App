@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ToDoTabMain from './ToDoTab/ToDoTabMain/ToDoTabMain';
 
 import './UserDetails.css'
 import icon_name from '../../assets/name.png'
@@ -63,7 +64,7 @@ const UserDetails = () => {
         <div className='element'><img src={icon_phone} alt="phone" /> <strong>Phone:</strong><a href={telUrl} target='_blank' rel='noreferrer'>{user.phone}</a></div><br />
         <div className='element'><img src={icon_website} alt="website" /> <strong>Website:</strong> <a href={websiteUrl} target='_blank' rel='noreferrer'>{user.website}</a></div><br />
         <div className='element'><img src={icon_company} alt="company" /> <strong>Company:</strong>{user.company.name}</div><br />
-
+        <ToDoTabMain userId={userId} />
       </div>
     </div>
   )
