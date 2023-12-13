@@ -1,0 +1,9 @@
+
+.todotab__container {
+    border-top: 1px solid black;
+    display: flex;
+    width: 100%;
+}
+.todotab__element:active {
+    background-color: bisque;
+}
