@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import ToDoTabPosts from '../ToDoTabPosts/ToDoTabPosts';
 import ToDoTabTodos from '../ToDoTabTodos/ToDoTabTodos';
 import ToDoTabAlbum from '../ToDoTabAlbum/ToDoTabAlbum';

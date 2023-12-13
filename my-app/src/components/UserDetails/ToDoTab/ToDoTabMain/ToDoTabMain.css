@@ -1,4 +1,6 @@
 
 .todotab__container {
     border-top: 1px solid black;
+    display: flex;
+    width: 100%;
 }

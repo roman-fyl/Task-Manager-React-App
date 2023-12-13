@@ -25,7 +25,7 @@ const ToDoTabAlbum = ({ userId }) => {
   
     return (
       <div className='list__body'>
-        <h2>Posts</h2>
+        <h2>Albums</h2>
         <ul className='list__container'>
           {album.map((album_element) => (
             <li key={album_element.id}>
