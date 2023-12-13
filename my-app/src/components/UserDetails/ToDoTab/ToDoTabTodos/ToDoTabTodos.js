@@ -55,7 +55,7 @@ const ToDoTabTodos = ({ userId }) => {
     }
   
     return (
-        <div>
+        <div className='list__body'>
           <h2>Todo</h2>
           <ul className='todos__container'>
             {todos.map((todo) => (

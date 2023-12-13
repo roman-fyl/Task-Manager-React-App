@@ -4,3 +4,6 @@
     display: flex;
     width: 100%;
 }
+.todotab__element:active {
+    background-color: bisque;
+}

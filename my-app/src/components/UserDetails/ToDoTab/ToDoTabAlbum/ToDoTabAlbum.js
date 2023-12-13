@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import './ToDoTabAlbum.css'
+
 
 const ToDoTabAlbum = ({ userId }) => {
     const [album, setAlbum] = useState([]);
@@ -26,7 +28,7 @@ const ToDoTabAlbum = ({ userId }) => {
     return (
       <div className='list__body'>
         <h2>Albums</h2>
-        <ul className='list__container'>
+        <ul className='list__container album'>
           {album.map((album_element) => (
             <li key={album_element.id}>
               <strong>Title:</strong> {album_element.title}<br />
