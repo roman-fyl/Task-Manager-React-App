@@ -27,7 +27,6 @@ const ToDoTabAlbum = ({ userId, className, onClick }) => {
   
     return (
       <div className='list__body' onClick={onClick}>
-        <h2>Albums</h2>
         <ul className='list__container album'>
           {album.map((album_element) => (
             <li key={album_element.id}>

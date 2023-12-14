@@ -56,7 +56,6 @@ const ToDoTabTodos = ({ userId, className, onClick }) => {
   
     return (
         <div className='list__body' onClick={onClick}>
-          <h2>Todo</h2>
           <ul className='list__container'>
             {todos.map((todo) => (
               <li key={todo.id} className='todo__item'>

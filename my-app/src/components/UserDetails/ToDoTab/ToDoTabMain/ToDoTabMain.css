@@ -1,9 +1,27 @@
 
-.todotab__container {
-    border-top: 1px solid black;
+.todotabmain__container {
     display: flex;
     width: 100%;
+    box-sizing: border-box;
+}
+.todotab__element {
+    width: 100%;
+    
+}
+.todotab__element h3{
+    text-align: center;
+    /* border: 1px solid black; */
 }
 .todotab__element:active {
     background-color: bisque;
+    box-sizing: border-box;
+
+}
+.active {
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+
 }
