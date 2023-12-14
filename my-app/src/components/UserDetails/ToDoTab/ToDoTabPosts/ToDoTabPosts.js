@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const ToDoTabPosts = ({ userId }) => {
+const ToDoTabPosts = ({ userId, className, onClick }) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const ToDoTabPosts = ({ userId }) => {
     }
   
     return (
-      <div className='list__body'>
+      <div className='list__body' onClick={onClick}>
         <h2>Posts</h2>
         <ul className='list__container'>
           {posts.map((post) => (

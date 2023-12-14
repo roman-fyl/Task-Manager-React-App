@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ToDoTabPosts from '../ToDoTabPosts/ToDoTabPosts';
 import ToDoTabTodos from '../ToDoTabTodos/ToDoTabTodos';
 import ToDoTabAlbum from '../ToDoTabAlbum/ToDoTabAlbum';
@@ -7,30 +7,39 @@ import ToDoTabAlbum from '../ToDoTabAlbum/ToDoTabAlbum';
 import './ToDoTabMain.css'
 
 
-const ToDoTabMain = ({userId}) => {
+const ToDoTabMain = ({ userId }) => {
 
-    const elements = document.querySelectorAll('.todotab__element');
+  const [activeTab, setActiveTab] = useState('posts');
 
-    const updateActiveClass = (event) => {
-      elements.forEach(el => {
-        el.classList.remove('active');
-      });
-      event.currentTarget.classList.add('active');
-      console.log(event.currentTarget)
-    };
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
 
-
-    return (
-        <div>
-            <div className='todotab__container'>
-            <ToDoTabPosts userId={userId} className='todotab__element active' onClick={updateActiveClass} />
-            <ToDoTabTodos userId={userId} className='todotab__element' onClick={updateActiveClass} />
-            <ToDoTabAlbum userId={userId} className='todotab__element' onClick={updateActiveClass} />
-
-            </div>
+  return (
+    <div>
+      <div className='todotab__container'>
+        <div
+          className={`todotab__element ${activeTab === 'posts' ? 'active' : ''}`}
+          onClick={() => handleTabClick('posts')}
+        >
+          <ToDoTabPosts userId={userId} />
         </div>
-    )
+        <div
+          className={`todotab__element ${activeTab === 'todos' ? 'active' : ''}`}
+          onClick={() => handleTabClick('todos')}
+        >
+          <ToDoTabTodos userId={userId} />
+        </div>
+        <div
+          className={`todotab__element ${activeTab === 'album' ? 'active' : ''}`}
+          onClick={() => handleTabClick('album')}
+        >
+          <ToDoTabAlbum userId={userId} />
+        </div>
+      </div>
+    </div>
+  )
 }
 
 

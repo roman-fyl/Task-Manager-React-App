@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './ToDoTabAlbum.css'
 
 
-const ToDoTabAlbum = ({ userId }) => {
+const ToDoTabAlbum = ({ userId, className, onClick }) => {
     const [album, setAlbum] = useState([]);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const ToDoTabAlbum = ({ userId }) => {
     }
   
     return (
-      <div className='list__body'>
+      <div className='list__body' onClick={onClick}>
         <h2>Albums</h2>
         <ul className='list__container album'>
           {album.map((album_element) => (

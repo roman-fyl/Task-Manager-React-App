@@ -5,9 +5,9 @@ h2 {
     justify-content: center;
 }
 
-.list__body {
-    width: 100vw;
-}
+/* .list__body {
+    width: 100%;
+} */
 .list__container {
     flex-wrap: wrap;
 }
