@@ -1,9 +1,15 @@
 .album {
+    display: flex;
     justify-content: flex-start !important;
+    flex-direction: column;
 }
-.active {
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-radius: 5px;
+
+.tab__menu {
+    margin: 0;
+    padding: 0;
+}
+
+.tab__element {
+    margin-top: 25px;
+    width: 90%;
 }

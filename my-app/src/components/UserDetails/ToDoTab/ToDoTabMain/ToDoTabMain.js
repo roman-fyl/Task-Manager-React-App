@@ -1,36 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ToDoTabPosts from '../ToDoTabPosts/ToDoTabPosts';
 import ToDoTabTodos from '../ToDoTabTodos/ToDoTabTodos';
 import ToDoTabAlbum from '../ToDoTabAlbum/ToDoTabAlbum';
+import TabContent from '../TabContent/TabContent';
 
 
 import './ToDoTabMain.css'
 
+const tabs = [
+  {label: 'Posts', component: ToDoTabPosts},
+  {label: 'Todo', component: ToDoTabTodos}, 
+  {label: 'Albums', component: ToDoTabAlbum} 
+]
 
-const ToDoTabMain = ({userId}) => {
+const ToDoTabMain = ({ userId }) => {
 
-    const elements = document.querySelectorAll('.todotab__element');
-
-    const updateActiveClass = (event) => {
-      elements.forEach(el => {
-        el.classList.remove('active');
-      });
-      event.currentTarget.classList.add('active');
-      console.log(event.currentTarget)
-    };
+  const [activeTab, setActiveTab] = useState('Posts');
 
 
-
-    return (
-        <div>
-            <div className='todotab__container'>
-            <ToDoTabPosts userId={userId} className='todotab__element active' onClick={updateActiveClass} />
-            <ToDoTabTodos userId={userId} className='todotab__element' onClick={updateActiveClass} />
-            <ToDoTabAlbum userId={userId} className='todotab__element' onClick={updateActiveClass} />
-
-            </div>
+  return (
+    <div>
+    <div className='todotabmain__container'>
+      {tabs.map((tab) => (
+        <TabContent
+          key={tab.label}
+          label={tab.label}
+          active={tab.label === activeTab}
+          onClick={() => setActiveTab(tab.label)}
+        />
+      ))}
+    </div>
+    <div>
+      {tabs.map((tab) => (
+        <div key={tab.label}>
+          {tab.label === activeTab && <tab.component userId={userId} />}
         </div>
-    )
+      ))}
+    </div>
+  </div>
+  );
 }
 
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './ToDoTabAlbum.css'
 
 
-const ToDoTabAlbum = ({ userId }) => {
+const ToDoTabAlbum = ({ userId, className, onClick }) => {
     const [album, setAlbum] = useState([]);
 
     useEffect(() => {
@@ -26,11 +26,10 @@ const ToDoTabAlbum = ({ userId }) => {
     }
   
     return (
-      <div className='list__body'>
-        <h2>Albums</h2>
-        <ul className='list__container album'>
+      <div className='list__body' onClick={onClick}>
+        <ul className='list__container album tab__menu'>
           {album.map((album_element) => (
-            <li key={album_element.id}>
+            <li key={album_element.id} className='tab__element'>
               <strong>Title:</strong> {album_element.title}<br />
             </li>
           ))}
@@ -40,3 +39,5 @@ const ToDoTabAlbum = ({ userId }) => {
   };
 
 export default ToDoTabAlbum;
+
+
