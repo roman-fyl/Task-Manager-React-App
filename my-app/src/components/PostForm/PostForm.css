@@ -32,10 +32,14 @@ button {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
 }
 
 button[type="submit"] {
-    background-color: rgb(55, 145, 255);
+    background-color:brown;
     color: white;
 
 }

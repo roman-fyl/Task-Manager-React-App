@@ -27,9 +27,9 @@ const ToDoTabAlbum = ({ userId, className, onClick }) => {
   
     return (
       <div className='list__body' onClick={onClick}>
-        <ul className='list__container album'>
+        <ul className='list__container album tab__menu'>
           {album.map((album_element) => (
-            <li key={album_element.id}>
+            <li key={album_element.id} className='tab__element'>
               <strong>Title:</strong> {album_element.title}<br />
             </li>
           ))}
@@ -39,3 +39,5 @@ const ToDoTabAlbum = ({ userId, className, onClick }) => {
   };
 
 export default ToDoTabAlbum;
+
+

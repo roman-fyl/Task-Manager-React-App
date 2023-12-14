@@ -15,29 +15,29 @@ const tabs = [
 
 const ToDoTabMain = ({ userId }) => {
 
-  const [activeTab, setActiveTab] = useState('posts');
+  const [activeTab, setActiveTab] = useState('Posts');
 
 
   return (
     <div>
-      <div className='todotabmain__container'>
-        {tabs.map((tab) => (
-          <TabContent
-            key={tab.label}
-            label={tab.label}
-            active={tab.label === activeTab}
-            onClick={() => setActiveTab(tab.label)}
-          />
-        ))}
-      </div>
-      <div>
-        {tabs.map((tab) => (
-          <div key={tab.label}>
-            {tab.label === activeTab && <tab.component userId={userId} />}
-          </div>
-        ))}
-      </div>
+    <div className='todotabmain__container'>
+      {tabs.map((tab) => (
+        <TabContent
+          key={tab.label}
+          label={tab.label}
+          active={tab.label === activeTab}
+          onClick={() => setActiveTab(tab.label)}
+        />
+      ))}
     </div>
+    <div>
+      {tabs.map((tab) => (
+        <div key={tab.label}>
+          {tab.label === activeTab && <tab.component userId={userId} />}
+        </div>
+      ))}
+    </div>
+  </div>
   );
 }
 

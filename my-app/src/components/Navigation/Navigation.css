@@ -23,6 +23,6 @@ ul {
     transition: .2s all ease-in-out;
  }
  li a:hover {
-    color: red;
+    color: brown;
     text-transform: uppercase;
  }

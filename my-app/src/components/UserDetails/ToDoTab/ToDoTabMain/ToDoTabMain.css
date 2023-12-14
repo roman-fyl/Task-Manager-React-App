@@ -3,25 +3,32 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
+    justify-content: center;
 }
 .todotab__element {
-    width: 100%;
-    
+    width: 30%;
+    border-bottom: 1px solid black;
 }
+.todotab__element:hover{
+    cursor: pointer;
+    color: brown;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all .2s linear;
+}
+
 .todotab__element h3{
     text-align: center;
-    /* border: 1px solid black; */
 }
+
 .todotab__element:active {
-    background-color: bisque;
     box-sizing: border-box;
 
 }
 .active {
     border-right: 1px solid black;
-    border-top: 1px solid black;
+    border-top: 5px solid rgb(150, 150, 150);
     border-left: 1px solid black;
-    border-radius: 5px;
+    border-bottom: 0px solid black;
     box-sizing: border-box;
 
 }

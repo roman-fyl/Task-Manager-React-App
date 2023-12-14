@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ToDoTabPosts.css';
 
 
 const ToDoTabPosts = ({ userId, className, onClick }) => {
@@ -25,9 +26,9 @@ const ToDoTabPosts = ({ userId, className, onClick }) => {
   
     return (
       <div className='list__body' onClick={onClick}>
-        <ul className='list__container'>
+        <ul className='list__container tab__menu'>
           {posts.map((post) => (
-            <li key={post.id} className='list__item'>
+            <li key={post.id} className='list__item tab__element'>
               <strong>Title:</strong> {post.title}<br />
               <strong>Body:</strong> {post.body}
             </li>

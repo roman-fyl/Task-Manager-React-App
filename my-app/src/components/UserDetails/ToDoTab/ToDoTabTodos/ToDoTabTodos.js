@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import TodoItem from '../../../TodoItem/TodoItem';
 
+import './ToDoTabTodos.css'
+
 
 const ToDoTabTodos = ({ userId, className, onClick }) => {
     const [todos, setTodos] = useState([]);
@@ -56,9 +58,9 @@ const ToDoTabTodos = ({ userId, className, onClick }) => {
   
     return (
         <div className='list__body' onClick={onClick}>
-          <ul className='list__container'>
+          <ul className='list__container tab__menu album'>
             {todos.map((todo) => (
-              <li key={todo.id} className='todo__item'>
+              <li key={todo.id} className='todo__item tab__element'>
                 <TodoItem todo={todo} onToggleCompleted={(id, completed) => handleToggleCompleted(id, completed)} />
               </li>
             ))}

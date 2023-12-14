@@ -1,3 +1,15 @@
 .album {
+    display: flex;
     justify-content: flex-start !important;
+    flex-direction: column;
+}
+
+.tab__menu {
+    margin: 0;
+    padding: 0;
+}
+
+.tab__element {
+    margin-top: 25px;
+    width: 90%;
 }
