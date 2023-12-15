@@ -36,9 +36,7 @@ const ToDoTabMain = ({ userId }) => {
     <div>
       {tabs.map((tab) => (
         <div key={tab.label} style={{display:tab.label === activeTab ? 'block' : 'none'} } >
-          {/* {tab.label === activeTab && <tab.component userId={userId} />} */}
           <tab.component userId={userId} />
-
         </div>
       ))}
     </div>
