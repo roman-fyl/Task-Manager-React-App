@@ -2,8 +2,21 @@
     cursor: pointer;
     padding: 8px;
     margin: 4px 0;
+    display: flex;
+    flex-direction: row;
+  }
+  .todo-item:hover {
+    color:brown;
   }
   
   .todo-item.completed {
     text-decoration: line-through;
+  }
+  input[type="checkbox"] {
+    accent-color: brown;
+    width: 30px;
+  }
+  input[type="checkbox"]:checked {
+    accent-color: green;
+    width: 30px;
   }

@@ -31,9 +31,9 @@ const ToDoTabTodos = ({ userId }) => {
   
     return (
       <div className='list__body'>
-        <ul className='list__container tab__menu album'>
+        <ul className='list__container tab__todo__menu'>
           {todos.map((todo) => (
-            <li key={todo.id} className='todo__item tab__element'>
+            <li key={todo.id} className='tab__todo__item'>
               <TodoItem todo={todo} onToggleCompleted={(id, completed) => handleToggleCompleted(id, completed)} />
             </li>
           ))}
