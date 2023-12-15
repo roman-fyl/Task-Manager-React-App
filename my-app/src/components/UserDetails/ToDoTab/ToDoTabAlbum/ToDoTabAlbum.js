@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import './ToDoTabAlbum.css';
 
-import './ToDoTabAlbum.css'
-
-
-const ToDoTabAlbum = ({ userId, className, onClick }) => {
+const ToDoTabAlbum = ({ userId }) => {
     const [album, setAlbum] = useState([]);
-
+  
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -17,16 +15,15 @@ const ToDoTabAlbum = ({ userId, className, onClick }) => {
           console.error('Error fetching posts:', error);
         }
       };
-  
       fetchData();
-    }, [userId]);
+    },[userId]);
   
     if (!album.length) {
       return <p>No albums available.</p>;
     }
   
     return (
-      <div className='list__body' onClick={onClick}>
+      <div className='list__body'>
         <ul className='list__container album tab__menu'>
           {album.map((album_element) => (
             <li key={album_element.id} className='tab__element'>
@@ -36,8 +33,6 @@ const ToDoTabAlbum = ({ userId, className, onClick }) => {
         </ul>
       </div>
     );
-  };
+};
 
 export default ToDoTabAlbum;
-
-

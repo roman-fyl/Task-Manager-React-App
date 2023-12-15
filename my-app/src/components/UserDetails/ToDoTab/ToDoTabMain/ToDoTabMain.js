@@ -16,7 +16,10 @@ const tabs = [
 const ToDoTabMain = ({ userId }) => {
 
   const [activeTab, setActiveTab] = useState('Posts');
-
+  
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
     <div>
@@ -26,14 +29,14 @@ const ToDoTabMain = ({ userId }) => {
           key={tab.label}
           label={tab.label}
           active={tab.label === activeTab}
-          onClick={() => setActiveTab(tab.label)}
+          onClick={() => handleTabClick(tab.label)}
         />
       ))}
     </div>
     <div>
       {tabs.map((tab) => (
-        <div key={tab.label}>
-          {tab.label === activeTab && <tab.component userId={userId} />}
+        <div key={tab.label} style={{display:tab.label === activeTab ? 'block' : 'none'} } >
+          <tab.component userId={userId} />
         </div>
       ))}
     </div>
