@@ -18,7 +18,8 @@ const TodoItem = ({ todo, onToggleCompleted }) => {
 
   return (
     <div className={`todo-item ${completed ? 'completed' : ''}`} onClick={handleToggle}>
-      {todo.title}
+      <input type="checkbox" checked={completed} onChange={handleToggle} />
+      <span>{todo.title}</span>
     </div>
   );
 };
