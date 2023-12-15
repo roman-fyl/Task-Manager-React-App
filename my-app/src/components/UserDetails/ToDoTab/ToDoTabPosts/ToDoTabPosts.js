@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './ToDoTabPosts.css';
 
-
-const ToDoTabPosts = ({ userId, className, onClick }) => {
+const ToDoTabPosts = ({ userId }) => {
     const [posts, setPosts] = useState([]);
-
+  
+  
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -16,16 +16,15 @@ const ToDoTabPosts = ({ userId, className, onClick }) => {
           console.error('Error fetching posts:', error);
         }
       };
-  
       fetchData();
-    }, [userId]);
+    },[userId]);
   
     if (!posts.length) {
       return <p>No posts available.</p>;
     }
   
     return (
-      <div className='list__body' onClick={onClick}>
+      <div className='list__body'>
         <ul className='list__container tab__menu'>
           {posts.map((post) => (
             <li key={post.id} className='list__item tab__element'>
@@ -36,6 +35,6 @@ const ToDoTabPosts = ({ userId, className, onClick }) => {
         </ul>
       </div>
     );
-  };
+};
 
 export default ToDoTabPosts;

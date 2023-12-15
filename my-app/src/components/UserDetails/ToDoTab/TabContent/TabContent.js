@@ -4,7 +4,7 @@ const TabContent = ({ label, active, onClick }) => {
 
     const handleClick = (event) => {
         event.preventDefault(); 
-        onClick(event); 
+        onClick(); 
       };
       
   return (
