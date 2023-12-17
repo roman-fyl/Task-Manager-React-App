@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import './PostForm.css'
 
 const PostForm = ({ onAddPost }) => {
-    const { register, handleSubmit, reset, formState: {errors} } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = async (data) => {
         try {
@@ -35,13 +35,11 @@ const PostForm = ({ onAddPost }) => {
             <label>
                 Title
                 <input {...register("title", { required: true })} required />
-                {/* {errors.title && <p>Title is required</p>} */}
             </label>
             <br />
             <label>
                 Body
                 <textarea className='textarea__body' {...register("body", { required: true })} required />
-                {/* {errors.body && <p>Text is required</p>} */}
             </label>
             <br />
             <div className="buttons">

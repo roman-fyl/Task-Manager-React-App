@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { fetchData } from '../../../../store/api/ApiProfile';
 import './ToDoTabPosts.css';
 
 const ToDoTabPosts = ({ userId }) => {
     const [posts, setPosts] = useState([]);
   
-  
     useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`);
-          const data = await response.json();
-          console.log(data);
-          setPosts(data);
-        } catch (error) {
-          console.error('Error fetching posts:', error);
-        }
-      };
-      fetchData();
+
+      fetchData(userId, 'posts').then((data) => {setPosts(data)});
     },[userId]);
   
     if (!posts.length) {

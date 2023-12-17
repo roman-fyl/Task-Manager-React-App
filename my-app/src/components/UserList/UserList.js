@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { fetchData } from '../../store/api/ApiData';
 
 import "./UserList.css"
 
@@ -7,19 +8,8 @@ const UserList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
-        const data = await response.json();
-        setUsers(data);
-        console.log(data);
-      } catch (error) {
-        console.log('Error fetching posts:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    fetchData('users').then((data) => {setUsers(data)});
+  },[]);
 
   return (
     <div>
