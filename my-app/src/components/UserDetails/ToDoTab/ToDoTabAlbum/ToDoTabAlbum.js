@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchData } from '../../../../store/api/ApiProfile';
+import { getProfileData } from '../../../../store/api/ApiProfile';
 import './ToDoTabAlbum.css';
 
 const ToDoTabAlbum = ({ userId }) => {
@@ -7,7 +7,7 @@ const ToDoTabAlbum = ({ userId }) => {
   
     useEffect(() => {
 
-      fetchData(userId, 'albums').then((data) => {setAlbum(data)});
+      getProfileData(userId, 'albums').then((data) => {setAlbum(data)});
     },[userId]);
   
     if (!album.length) {

@@ -1,5 +1,5 @@
 
-export const fetchData = async (userId, request) => {
+export const getProfileData = async (userId, request) => {
   const url = `https://jsonplaceholder.typicode.com/users/${userId}/${request}`
     try {
       const response = await fetch(url);

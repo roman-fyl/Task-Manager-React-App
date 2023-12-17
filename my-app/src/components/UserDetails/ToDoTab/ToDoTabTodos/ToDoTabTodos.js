@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TodoItem from '../../../TodoItem/TodoItem';
-import { fetchData } from '../../../../store/api/ApiProfile';
+import { getProfileData } from '../../../../store/api/ApiProfile';
 import './ToDoTabTodos.css';
 
 const ToDoTabTodos = ({ userId }) => {
@@ -8,7 +8,7 @@ const ToDoTabTodos = ({ userId }) => {
   
     useEffect(() => {
 
-      fetchData(userId, 'todos').then((data) => {setTodos(data)});
+      getProfileData(userId, 'todos').then((data) => {setTodos(data)});
     },[userId]);
 
 
