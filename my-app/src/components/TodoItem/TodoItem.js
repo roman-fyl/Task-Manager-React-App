@@ -13,7 +13,6 @@ const TodoItem = ({ todo, onToggleCompleted }) => {
 
   const handleToggle = () => {
     setCompleted(!completed);
-    onToggleCompleted(todo.id, completed);
   };
 
   return (

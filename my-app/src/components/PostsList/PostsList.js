@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostForm from '../PostForm/PostForm';
+import { fetchData } from '../../store/api/ApiData';
 
 import "./PostsList.css"
 
@@ -7,19 +8,8 @@ const PostsList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const data = await response.json();
-        console.log(data);
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    fetchData('posts').then((data) => {setPosts(data)});
+  },[]);
 
   const handleAddPost = (newPost) => {
     setPosts((prevPosts) => [...prevPosts, newPost])
